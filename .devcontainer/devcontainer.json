@@ -1,0 +1,7 @@
+{
+	"name": "EMLOv3 Dev Container",
+	"build": {
+		"dockerfile": "../Dockerfile",
+		"context": ".."
+	}
+}
