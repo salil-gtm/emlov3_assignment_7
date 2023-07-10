@@ -184,3 +184,6 @@ configs/local/default.yaml
 .aim
 /data
 /logs
+
+# gitpod
+.gitpod.yml

@@ -5,12 +5,12 @@
 
 defaults:
   - override /data: hp.yaml
-  - override /model: null
+  - override /model: gpt.yaml
   - override /trainer: default.yaml
   - override /logger: many_loggers.yaml
   - override /callbacks: default.yaml
   - override /hydra: default.yaml
-  - override /hparams_search: null
+  - override /hparams_search: hp_optuna.yaml
 
 # all parameters below will be merged with parameters from default configurations set above
 # this allows you to overwrite only specified parameters
