@@ -29,6 +29,9 @@ train: True
 # lightning chooses best weights based on the metric specified in checkpoint callback
 test: True
 
+# Tuner to find LR and batch_size
+tuner: False
+
 # compile model for faster training with pytorch 2.0
 compile: False
 

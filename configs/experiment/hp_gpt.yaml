@@ -30,6 +30,8 @@ data:
   num_workers: 16
   batch_size: 1024 
 
+tuner: True
+
 compile: False
 
 logger:

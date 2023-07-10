@@ -4,6 +4,7 @@ import hydra
 import lightning as L
 import torch
 from lightning import Callback, LightningDataModule, LightningModule, Trainer
+from lightning.pytorch.tuner import Tuner
 from lightning.pytorch.loggers import Logger
 from omegaconf import DictConfig
 
@@ -70,6 +71,15 @@ def train(cfg: DictConfig) -> Tuple[dict, dict]:
     if cfg.get("compile"):
         log.info("Compiling model!")
         model = torch.compile(model)
+
+    if cfg.get("tuner"):
+        log.info("LR finder!")
+        lr_finder = Tuner(trainer).lr_find(model=model, datamodule=datamodule)
+        print(f"best initial lr={lr_finder.suggestion()}")
+
+        log.info("Batch Size finder!")
+        bs_finder = Tuner(trainer).scale_batch_size(model=model, datamodule=datamodule, mode='power')
+        print(f"optimal batch size = {dataset.hparams.batch_size}")
 
     if cfg.get("train"):
         log.info("Starting training!")
