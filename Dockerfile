@@ -1,7 +1,7 @@
 FROM python:3.8-slim-buster
 
 LABEL maintainer="Salil Gautam <salil.gtm@gmail.com>"
-LABEL description="Dockerfile for Assignment 6 of EMLOv3."
+LABEL description="Dockerfile for Assignment 7 of EMLOv3."
 
 WORKDIR /workspace
 

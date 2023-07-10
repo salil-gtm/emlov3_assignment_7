@@ -12,6 +12,9 @@ defaults:
   - callbacks: default.yaml
   - hydra: default.yaml
 
+  # config for hyperparameter optimization
+  - hparams_search: mnist_optuna.yaml
+
   # experiment configs allow for version control of specific hyperparameters
   # e.g. best hyperparameters for given model and datamodule
   - experiment: null

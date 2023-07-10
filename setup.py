@@ -8,7 +8,7 @@ setup(
     description="EMLOv3 Base Setup",
     author="Salil Gautam",
     author_email="salil.gtm@gmail.com",
-    url="https://github.com/salil-gtm/emlov3_assignment_6",
+    url="https://github.com/salil-gtm/emlov3_assignment_7",
     install_requires=["lightning", "hydra-core"],
     packages=find_packages(),
     entry_points={

@@ -1,0 +1,38 @@
+# @package _global_
+
+# to execute this experiment run:
+# python train.py experiment=cifar10
+
+defaults:
+  - override /data: hp.yaml
+  - override /model: null
+  - override /trainer: default.yaml
+  - override /logger: many_loggers.yaml
+  - override /callbacks: default.yaml
+  - override /hydra: default.yaml
+  - override /hparams_search: null
+
+# all parameters below will be merged with parameters from default configurations set above
+# this allows you to overwrite only specified parameters
+
+experiment_name: "hp-gpt-experiment"
+
+tags:
+  hp: "optuna_exp"
+
+seed: 0
+
+trainer:
+  min_epochs: 0
+  max_epochs: 1
+
+data:
+  num_workers: 16
+  batch_size: 1024 
+
+compile: False
+
+logger:
+  mlflow:
+    tags: ${tags}
+    experiment_name: ${experiment_name}
