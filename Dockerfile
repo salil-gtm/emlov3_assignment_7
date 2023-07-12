@@ -1,4 +1,4 @@
-FROM python:3.8-slim-buster
+FROM python:3.10-slim-buster
 
 LABEL maintainer="Salil Gautam <salil.gtm@gmail.com>"
 LABEL description="Dockerfile for Assignment 7 of EMLOv3."
