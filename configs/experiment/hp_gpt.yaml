@@ -25,6 +25,8 @@ seed: 0
 trainer:
   min_epochs: 0
   max_epochs: 1
+  accelerator: auto
+  devices: 1
 
 data:
   num_workers: 16

@@ -79,7 +79,7 @@ def train(cfg: DictConfig) -> Tuple[dict, dict]:
 
         log.info("Batch Size finder!")
         bs_finder = Tuner(trainer).scale_batch_size(model=model, datamodule=datamodule, mode='power')
-        print(f"optimal batch size = {dataset.hparams.batch_size}")
+        print(f"optimal batch size = {datamodule.hparams.batch_size}")
 
     if cfg.get("train"):
         log.info("Starting training!")
