@@ -45,8 +45,8 @@ hydra:
 
     # define hyperparameter search space
     params:
-      data.block_size: choice(4, 8, 16)
+      data.block_size: choice(4, 8, 12)
       model.n_embed: choice(128, 256, 512)
-      model.n_heads: choice(4, 8, 12)
+      model.n_heads: choice(4, 8)
       model.drop_p: choice(0.0, 0.1, 0.15, 0.2)
       model.n_decoder_blocks: choice(4, 6)
