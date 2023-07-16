@@ -10,12 +10,12 @@ defaults:
   - override /logger: many_loggers.yaml
   - override /callbacks: default.yaml
   - override /hydra: default.yaml
-  - override /hparams_search: hp_optuna.yaml
+  - override /hparams_search: null
 
 # all parameters below will be merged with parameters from default configurations set above
 # this allows you to overwrite only specified parameters
 
-experiment_name: "hp-gpt-experiment"
+experiment_name: "hp-gpt-experiment-best-10epocs"
 
 tags:
   hp: "optuna_exp"
@@ -24,13 +24,21 @@ seed: 0
 
 trainer:
   min_epochs: 0
-  max_epochs: 1
+  max_epochs: 10
   accelerator: auto
   devices: 1
 
 data:
   num_workers: 4
-  batch_size: 2048
+  batch_size: 4096
+  block_size: 8
+
+model:
+  n_embed: 256
+  n_heads: 4
+  n_decoder_blocks: 4
+  drop_p: 0.1
+  block_size: 8
 
 tuner: True
 
