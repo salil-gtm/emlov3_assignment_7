@@ -30,7 +30,7 @@ trainer:
 
 data:
   num_workers: 4
-  batch_size: 4096
+  batch_size: 2048
   block_size: 8
 
 model:
